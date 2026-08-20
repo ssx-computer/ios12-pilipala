@@ -652,10 +652,8 @@ class _VideoDetailPageState extends State<VideoDetailPage>
                         expandedHeight: expandedHeight,
                         backgroundColor: Colors.black,
                         flexibleSpace: FlexibleSpaceBar(
-                          background: PopScope(
-                            canPop:
-                                plPlayerController?.isFullScreen.value != true,
-                            onPopInvoked: (bool didPop) {
+                          background: WillPopScope(
+                            onWillPop: () async {
                               if (plPlayerController?.isFullScreen.value ==
                                   true) {
                                 plPlayerController!
@@ -665,6 +663,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
                                   Orientation.landscape) {
                                 verticalScreen();
                               }
+                              return false; // 拦截返回，由程序控制退出
                             },
                             child: LayoutBuilder(
                               builder: (BuildContext context,
