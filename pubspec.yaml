@@ -180,8 +180,9 @@ dependency_overrides:
   lottie: 2.6.0
   shared_preferences: 2.2.2
   path_provider: 2.1.1
-  package_info_plus: 4.0.2          # ← 从 5.0.1 降下来
-  web: 0.1.0-alpha.6                # ← 新增，锁住子依赖
+  package_info_plus: 4.0.2
+  package_info_plus_platform_interface: 2.0.1
+  web: 0.1.0-alpha.6
   device_info_plus: 9.1.2
   media_kit:
     git:
