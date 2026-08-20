@@ -663,7 +663,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
                                   Orientation.landscape) {
                                 verticalScreen();
                               }
-                              return false; // 拦截返回，由程序控制退出
+                              return false;
                             },
                             child: LayoutBuilder(
                               builder: (BuildContext context,
