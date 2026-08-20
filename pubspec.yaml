@@ -144,8 +144,8 @@ dependency_overrides:
   connectivity_plus_platform_interface: 1.2.4
   permission_handler_apple: 9.1.4
   shared_preferences: 2.2.2
-  shared_preferences_ios: 2.1.1
-  path_provider_ios: 2.1.2                    # ← 改这里，2.1.1 改为 2.1.2
+  # shared_preferences_ios 移除，让自动解析
+  # path_provider_ios 移除，让自动解析
   device_info_plus_platform_interface: 7.0.0
   package_info_plus_platform_interface: 2.0.1
   media_kit:
