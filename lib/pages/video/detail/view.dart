@@ -65,8 +65,6 @@ class _VideoDetailPageState extends State<VideoDetailPage>
   late bool autoPiP;
   late Floating floating;
   RxBool isShowing = true.obs;
-  // 生命周期监听
-  late final AppLifecycleListener _lifecycleListener;
   late double statusHeight;
 
   @override
@@ -106,7 +104,6 @@ class _VideoDetailPageState extends State<VideoDetailPage>
       floating = vdCtr.floating!;
     }
     WidgetsBinding.instance.addObserver(this);
-    lifecycleListener();
   }
 
   // 获取视频资源，初始化播放器
@@ -239,7 +236,6 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     }
     appbarStream.close();
     WidgetsBinding.instance.removeObserver(this);
-    _lifecycleListener.dispose();
     super.dispose();
   }
 
@@ -313,19 +309,28 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     }
   }
 
-  // 生命周期监听
-  void lifecycleListener() {
-    _lifecycleListener = AppLifecycleListener(
-      // onResume: () => _handleTransition('resume'),
-      // 后台
-      // onInactive: () => _handleTransition('inactive'),
-      // 在Android和iOS端不生效
-      // onHide: () => _handleTransition('hide'),
-      onShow: () => _handleTransition('show'),
-      onPause: () => _handleTransition('pause'),
-      onRestart: () => _handleTransition('restart'),
-      onDetach: () => _handleTransition('detach'),
-    );
+  // ============================================================
+  // 生命周期监听 (使用 WidgetsBindingObserver 替代 AppLifecycleListener)
+  // ============================================================
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.resumed:
+        _handleTransition('show');
+        break;
+      case AppLifecycleState.inactive:
+        // 不需要处理
+        break;
+      case AppLifecycleState.paused:
+        _handleTransition('pause');
+        break;
+      case AppLifecycleState.detached:
+        _handleTransition('detach');
+        break;
+      case AppLifecycleState.hidden:
+        // 在iOS和Android上不触发
+        break;
+    }
   }
 
   void _handleTransition(String name) {
