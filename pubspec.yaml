@@ -21,7 +21,7 @@ dependencies:
   dio: ^5.4.1
   cookie_jar: ^4.0.8
   dio_cookie_manager: ^3.1.1
-  connectivity_plus: 5.0.2                      # 降级
+  connectivity_plus: 5.0.2
   dio_http2_adapter: ^2.3.1+1
 
   # 图片
@@ -29,20 +29,20 @@ dependencies:
   saver_gallery: ^3.0.1
 
   # 存储
-  path_provider: 2.1.1                          # 锁定
+  path_provider: 2.1.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
   # 设备信息
-  device_info_plus: 9.1.2                      # 降级
+  device_info_plus: 9.1.2
   # 权限
-  permission_handler: 10.4.3                   # 降级
+  permission_handler: 10.4.3
   # 分享
   share_plus: ^7.0.2
   # cookie 管理
   webview_cookie_manager: ^2.0.6
   # 浏览器
-  webview_flutter: 4.4.2                       # 降级
+  webview_flutter: 4.4.2
   # 解决sliver滑动不同步
   extended_nested_scroll_view: ^6.2.1
   # 上拉加载
@@ -80,8 +80,8 @@ dependencies:
   protobuf: ^3.0.0
 
   # 获取app信息
-  package_info_plus: 4.0.2                     # 降级
-  url_launcher: 6.1.14                          # 降级
+  package_info_plus: 4.0.2
+  url_launcher: 6.1.14
   flutter_svg: ^2.0.10+1
   # 防抖节流
   easy_debounce: ^2.0.3
@@ -90,19 +90,13 @@ dependencies:
   # scheme跳转
   appscheme: ^1.0.8
   # 弹幕
-  ns_danmaku:
-    git:
-      url: https://github.com/guozhigq/flutter_ns_danmaku.git
-      ref: master
+  ns_danmaku: ^1.0.0
   # 状态栏图标控制
   status_bar_control: ^3.2.1
   # 代理
   system_proxy: ^0.1.0
   # pip
-  floating:
-    git:
-      url: https://github.com/guozhigq/floating.git
-      ref: main
+  floating: ^1.0.0
   # html解析
   html: ^0.15.4
   # html渲染
@@ -120,11 +114,11 @@ dependencies:
   expandable: ^5.0.1
   # 投屏
   dlna_dart: ^0.0.8
-  lottie: 2.6.0                                 # 降级
+  lottie: 2.6.0
   # 二维码
   qr_flutter: ^4.1.0
   bottom_sheet: ^4.0.4
-  web_socket_channel: 2.4.0                     # 锁定
+  web_socket_channel: 2.4.0
   brotli: ^0.6.0
   # 文本语法高亮
   re_highlight: ^0.0.3
@@ -147,19 +141,7 @@ dependency_overrides:
   path_provider_ios: 2.0.11
   device_info_plus_platform_interface: 7.0.0
   package_info_plus_platform_interface: 2.0.1
-  js-interop-experimental: 1.0.0               # ← 新增，强制使用 pub 版本
-  media_kit:
-    git:
-      url: https://github.com/media-kit/media-kit
-      path: media_kit
-  media_kit_video:
-    git:
-      url: https://github.com/media-kit/media-kit
-      path: media_kit_video
-  media_kit_libs_video:
-    git:
-      url: https://github.com/media-kit/media-kit
-      path: libs/universal/media_kit_libs_video
+
 flutter_launcher_icons:
   android: true
   ios: true
